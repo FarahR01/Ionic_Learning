@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Expense Manager</title>
+    <!-- Ionic Scripts -->
+    <script
+      type="module"
+      src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"
+    ></script>
+    <!-- Ionic Styles -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <ion-app>
+      <ion-header>
+        <ion-toolbar color="primary">
+          <ion-title>Expense Manager</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content>
+        <ion-grid>
+          <!-- Input fields for expense details -->
+          <ion-row>
+            <ion-col size="12">
+              <ion-item>
+                <ion-label position="floating">Expense Title</ion-label>
+                <ion-input id="expenseTitle" type="text"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label position="floating">Amount</ion-label>
+                <ion-input id="expenseAmount" type="number"></ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+
+          <!-- Buttons to add and clear expenses -->
+          <ion-row>
+            <ion-col size="12" class="ion-text-right">
+              <ion-button id="btnAdd" color="success">Add Expense</ion-button>
+              <ion-button id="btnClear" color="danger">Clear</ion-button>
+            </ion-col>
+          </ion-row>
+
+          <!-- List to display expenses -->
+          <ion-row>
+            <ion-col size="12">
+              <ion-list id="expenseList"></ion-list>
+            </ion-col>
+          </ion-row>
+
+          <!-- Total expense display -->
+          <ion-row>
+            <ion-col size="12">
+              <ion-card>
+                <ion-card-header>
+                  <ion-card-title>Total Expense</ion-card-title>
+                </ion-card-header>
+                <ion-card-content id="totalExpense">0 $</ion-card-content>
+              </ion-card>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-content>
+    </ion-app>
+
+    <script src="script.js"></script>
+  </body>
+</html>
