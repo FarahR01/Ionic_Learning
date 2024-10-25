@@ -1,0 +1,40 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="secondary">
+    <ion-title class="ion-text-center app-title" >CourseDex</ion-title>
+    <ion-buttons slot="end">
+      <!-- Button to add a new course with label and icon for better user engagement -->
+      <ion-button routerLink="/add" fill="solid" color="light">
+        <ion-icon slot="icon-only" name="add-circle-outline"></ion-icon>
+        Add Course
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title class="ion-text-center">Explore Our Latest Courses</ion-card-title>
+    </ion-card-header>
+  </ion-card>
+
+  <ion-list lines="full">
+    <ion-item-group>
+      <ion-item-divider color="primary">
+        <ion-label>Available Courses</ion-label>
+      </ion-item-divider>
+
+      <!-- Loop through courses with improved spacing and visual layout -->
+      <ion-item *ngFor="let course of courses; trackBy: trackByFn" [routerLink]="['/details', course.id]" button>
+        <ion-avatar slot="start">
+          <img [src]="course.image" />
+        </ion-avatar>
+        <ion-label class="ion-padding-start">
+          <h2>{{ course.title }}</h2>
+          <p>by {{ course.author }}</p>
+        </ion-label>
+        <ion-icon slot="end" name="chevron-forward-outline"></ion-icon>
+      </ion-item>
+    </ion-item-group>
+  </ion-list>
+</ion-content>

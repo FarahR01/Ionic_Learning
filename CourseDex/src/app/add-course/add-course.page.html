@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title class="ion-text-center">Add a New Course</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- Reference variable 'f' is assigned to the Angular form (ngForm) to access its state and values in the template -->
+  <form (ngSubmit)="onSubmit(f.value, f)" #f="ngForm" class="ion-padding">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title class="ion-text-center">Course Details</ion-card-title>
+        <ion-card-subtitle class="ion-text-center">Please fill out the form</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-item lines="inset">
+          <ion-label position="stacked">Course Title</ion-label>
+          <!-- ngModel binds the input value to the title property in the component -->
+          <ion-input ngModel name="title" required placeholder="Enter course title"></ion-input>
+        </ion-item>
+
+        <ion-item lines="inset">
+          <ion-label position="stacked">Author</ion-label>
+          <ion-input ngModel name="author" required placeholder="Enter author name"></ion-input>
+        </ion-item>
+
+        <ion-item lines="inset">
+          <ion-label position="stacked">Image URL</ion-label>
+          <ion-input ngModel name="image" required placeholder="Enter image URL"></ion-input>
+        </ion-item>
+
+        <ion-item lines="inset">
+          <ion-label position="stacked">Keywords (comma-separated)</ion-label>
+          <ion-input ngModel name="keywords" required placeholder="e.g., JavaScript, Angular, Web"></ion-input>
+        </ion-item>
+
+        <!-- Submit button is disabled if the form 'f' is invalid, ensuring required fields are filled before submission -->
+        <ion-button type="submit" expand="block" color="success" [disabled]="f.invalid" class="ion-margin-top">
+          <ion-icon name="add-circle-outline" slot="start"></ion-icon>
+          Add Course
+        </ion-button>
+      </ion-card-content>
+    </ion-card>
+  </form>
+</ion-content>

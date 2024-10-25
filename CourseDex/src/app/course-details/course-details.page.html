@@ -1,0 +1,41 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="secondary">
+    <ion-title class="ion-text-center">Course Details</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <!-- Delete button with confirmation dialog -->
+      <ion-button (click)="presentAlert()" fill="clear" color="danger">
+        <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <ion-card>
+    <ion-card-content class="ion-text-center">
+      <ion-thumbnail>
+        <ion-img [src]="selectedCourse.image" alt="Course image" class="course-image"></ion-img>
+      </ion-thumbnail>
+      <h2>{{ selectedCourse.title }}</h2>
+      <p>by {{ selectedCourse.author }}</p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Course Content</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <!-- Loop to display keywords associated with the course -->
+        <ion-item *ngFor="let keyword of selectedCourse.keywords; trackBy: trackByFn">
+          <ion-icon name="bookmark-outline" slot="start"></ion-icon>
+          <ion-label>{{ keyword }}</ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
