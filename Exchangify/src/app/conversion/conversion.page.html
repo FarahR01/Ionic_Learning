@@ -1,0 +1,42 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="conv-ion-toolbar">
+    <ion-title>Currency Conversion</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <ion-grid>
+    <ion-row class="ion-justify-content-center">
+      <ion-col size="4">
+        <img class="currency_Logo"src="../../assets/logo.png" alt="Exchangify Logo" />
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Select Currencies</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <!-- Fixed selection for USD -->
+      <ion-item>
+        <ion-label  position="fixed">Currency 1</ion-label>
+        <ion-select class="currency_Name" disabled value="USD">
+          <ion-select-option value="USD">USD</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <!-- Dropdown for selecting the second currency -->
+      <ion-item>
+        <ion-label position="fixed">Currency 2</ion-label>
+        <ion-select class="currency_Name" #c2 (ionChange)="onChange(c2.value)">
+          <ion-select-option *ngFor="let c of allCurrencies" [value]="c">
+            {{ c }}
+          </ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Display exchange rate message -->
+  <ion-label *ngIf="result.length" class="ion-text-center"> {{ result }} </ion-label>
+</ion-content>

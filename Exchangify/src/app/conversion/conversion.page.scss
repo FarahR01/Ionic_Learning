@@ -1,0 +1,115 @@
+/* Styling for the header */
+ion-header {
+    --background: linear-gradient(to right, #18534F, #18534F); /* Primary color */
+  }
+  
+  .conv-ion-toolbar {
+    --background: #18534F;    
+  }
+  .currency_Logo {
+    width: 200px; /* Set an optimal width */
+    height: auto ; /* Maintain aspect ratio */
+    display: block;
+    margin: 20px auto; /* Center the logo */
+  
+    /* Rounded corners */
+    border-radius: 12px;
+  
+    /* Add a soft shadow */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  
+    /* Border for added style */
+    border: 2px solid #18534F;
+  
+    /* Subtle scaling effect on hover */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .currency_Logo:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+  }
+  
+  ion-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #ffffff;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    letter-spacing: 1.1px;
+    text-align: center;
+  }
+  
+  /* Logo styling */
+  ion-content img {
+    max-width: 80px;
+    margin: 20px auto;
+    display: block;
+  }
+  
+  /* Styling for the ion-card */
+  ion-card {
+    border-radius: 15px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 20px;
+    padding: 16px;
+    background-color: #ffffff; /* Keeps card content white for contrast */
+  }
+  
+  /* Card title and content styling */
+  ion-card-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #18534F; /* Primary color */
+    text-align: center;
+  }
+  
+  ion-item {
+    --background: #ECF8F6; /* Soft background for better contrast */
+  }
+  
+  /* Card content text color */
+  ion-card-content {
+    font-size: 1.1rem;
+    color: #4a4a4a;
+  }
+  
+  /* Styling for ion-item labels to improve readability */
+  ion-label {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #003333; /* Darker, near-black color for better visibility */
+  }
+  
+  /* Specific styling for Currency 1 & 2 labels to increase contrast */
+  ion-item ion-label {
+    color: #002222; /* Very dark shade for clear visibility */
+  }
+  
+  /* Styling for ion-select */
+  ion-select {
+    --color: #003333; /* Darker text color for improved readability */
+    --background: #ECF8F6; /* Background color for select box */
+    --placeholder-color: #555555; /* Darker placeholder color */
+  }
+  
+  /* Centered result label styling */
+  ion-label.ion-text-center {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #18534F; /* Primary color */
+    margin-top: 1rem;
+    display: block;
+    text-align: center;
+  }
+  
+  /* Darker text color for select options */
+  ion-select-option {
+    --color: #002222; /* Very dark shade for clear visibility */
+  }
+  
+  .currency_Name{
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #18534F; /* Primary color */
+    text-align: center;
+  }

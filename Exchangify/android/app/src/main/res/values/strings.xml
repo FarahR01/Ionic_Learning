@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Exchangify</string>
+    <string name="title_activity_main">Exchangify</string>
+    <string name="package_name">com.example.exchangify</string>
+    <string name="custom_url_scheme">com.example.exchangify</string>
+</resources>
