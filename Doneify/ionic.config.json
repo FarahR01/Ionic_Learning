@@ -1,0 +1,7 @@
+{
+  "name": "Doneify",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Doneify</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="date-header">
+    <h1>Today, {{ currentDate | date: 'fullDate' }}</h1>
+  </div>
+
+  <ion-card *ngFor="let task of tasks">
+    <ion-item>
+      <ion-checkbox
+        [checked]="task.checked"
+        (ionChange)="toggleTaskStatus(task)"
+      ></ion-checkbox>
+      <ion-label>
+        <h2 [class.checked]="task.checked">{{ task.text }}</h2>
+        <p>{{ task.date | date: 'shortTime' }}</p>
+      </ion-label>
+      <ion-button color="danger" slot="end" (click)="confirmDeleteTask(task.id)">
+        Delete
+      </ion-button>
+    </ion-item>
+  </ion-card>
+
+<ion-item *ngIf="isAddingTask">
+  <ion-input #taskInput placeholder="Enter task"></ion-input>
+  <ion-button (click)="addTask(taskInput.value?.toString() || '')">
+    Add
+  </ion-button>
+</ion-item>
+
+  
+  
+  
+
+  <ion-button *ngIf="!isAddingTask" expand="block" (click)="toggleAddTaskInput()">
+    Add New Task
+  </ion-button>
+  <ion-button *ngIf="isAddingTask" color="danger" expand="block" (click)="toggleAddTaskInput()">
+    Cancel
+  </ion-button>
+</ion-content>
